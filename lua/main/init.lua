@@ -30,9 +30,29 @@ lsp.setup_nvim_cmp({
   })
 })
 
+require("luasnip").filetype_extend("dart", { "flutter" })
+
 lsp.setup()
 
-require("flutter-tools").setup { settings = { enableSnippets = true } }
+
+require("flutter-tools").setup {
+  decorations = {
+    statusline = {
+      app_version = false,
+      device = true,
+    },
+  },
+  widget_guides = {
+    enabled = true,
+  },
+  lsp = {
+    settings = {
+      showTodos = true,
+      completeFunctionCalls = true,
+      enableSnippets = true,
+    },
+  }
+}
 
 --set
 vim.opt.nu = true
