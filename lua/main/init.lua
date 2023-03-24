@@ -32,6 +32,7 @@ lsp.setup_nvim_cmp({
 })
 
 require("luasnip").filetype_extend("dart", { "flutter" })
+require("luasnip").filetype_extend("html",{"javascript","css"})
 
 lsp.setup()
 
