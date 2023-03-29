@@ -6,8 +6,8 @@ require('lualine').setup({
   options = {
     theme = 'ayu_dark',
     icons_enabled = true,
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
   }
 })
 
@@ -32,7 +32,7 @@ lsp.setup_nvim_cmp({
 })
 
 require("luasnip").filetype_extend("dart", { "flutter" })
-require("luasnip").filetype_extend("html",{"javascript","css"})
+require("luasnip").filetype_extend("html", { "javascript", "css" })
 
 lsp.setup()
 
@@ -48,15 +48,15 @@ vim.opt.showmode = false
 vim.opt.clipboard = 'unnamed,unnamedplus'
 
 --remap
-vim.keymap.set('n','pv',vim.cmd.Ex)
-vim.keymap.set('v','<C-c>','"+y')
-vim.keymap.set('v','<C-x>','"+x')
-vim.keymap.set('n','dd','"_dd')
-vim.keymap.set('n','<CR>','G<ESC>',{ noremap = true })
-vim.api.nvim_set_keymap('v', 'gg=G', '<ESC><cmd>lua vim.lsp.buf.format()<CR>', {noremap = true})
-vim.keymap.set('n','<C-b><Up>','<C-w><Up>')
-vim.keymap.set('n','<C-b><Down>','<C-w><Down>')
-vim.keymap.set('n','<C-b><Left>','<C-w><Left>')
-vim.keymap.set('n','<C-b><Right>','<C-w><Right>')
-vim.keymap.set('n','<C-b>h',vim.cmd.sp)
-vim.keymap.set('n','<C-b>v',vim.cmd.vsp)
+vim.keymap.set('n', 'pv', vim.cmd.Ex)
+vim.keymap.set('v', '<C-c>', '"+y')
+vim.keymap.set('v', '<C-x>', '"+x')
+vim.keymap.set('n', 'dd', '"_dd')
+vim.keymap.set('n', '<CR>', 'G<ESC>', { noremap = true })
+vim.api.nvim_set_keymap('n', 'vgg=G', '<ESC><cmd>lua vim.lsp.buf.format()<CR>', { noremap = true })
+vim.keymap.set('n', '<C-b><Up>', '<C-w><Up>')
+vim.keymap.set('n', '<C-b><Down>', '<C-w><Down>')
+vim.keymap.set('n', '<C-b><Left>', '<C-w><Left>')
+vim.keymap.set('n', '<C-b><Right>', '<C-w><Right>')
+vim.keymap.set('n', '<C-b>h', vim.cmd.sp)
+vim.keymap.set('n', '<C-b>v', vim.cmd.vsp)
