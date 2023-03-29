@@ -45,12 +45,13 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.showmode = false
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = 'unnamed,unnamedplus'
 
 --remap
 vim.keymap.set('n','pv',vim.cmd.Ex)
 vim.keymap.set('v','<C-c>','"+y')
 vim.keymap.set('v','<C-x>','"+x')
+vim.keymap.set('n','dd','"_dd')
 vim.api.nvim_set_keymap('v', 'gg=G', '<ESC><cmd>lua vim.lsp.buf.format()<CR>', {noremap = true})
 vim.keymap.set('n','<C-b><Up>','<C-w><Up>')
 vim.keymap.set('n','<C-b><Down>','<C-w><Down>')
