@@ -1,4 +1,5 @@
 vim.cmd.packadd('packer.nvim')
+
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use {'nvim-lualine/lualine.nvim',requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
@@ -28,6 +29,7 @@ return require('packer').startup(function(use)
     'akinsho/flutter-tools.nvim',
     requires = {
       'nvim-lua/plenary.nvim',
-    },
+    }
   }
+  use { "xorvet/vim-moonfly-contrast", as = "moonfly" }
 end)

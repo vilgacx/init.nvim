@@ -11,6 +11,17 @@ require('lualine').setup({
   }
 })
 
+local custom_highlight = vim.api.nvim_create_augroup("CustomHighlight", {})
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "moonfly",
+  callback = function()
+    vim.api.nvim_set_hl(0, "Function", { bg = "#000000" })
+  end,
+  group = custom_highlight,
+})
+
+vim.cmd [[colorscheme moonfly]]
+
 --LSP
 local lsp = require('lsp-zero').preset({
   name = 'minimal',
@@ -32,7 +43,7 @@ lsp.setup_nvim_cmp({
 })
 
 require("luasnip").filetype_extend("dart", { "flutter" })
-require("luasnip").filetype_extend("html", { "javascript", "css" })
+require("luasnip").filetype_extend("html", { "javascript", "css", "vue" })
 
 lsp.setup()
 
@@ -46,17 +57,23 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.showmode = false
 vim.opt.clipboard = 'unnamed,unnamedplus'
+vim.opt.backspace = 'indent,eol,start';
 
 --remap
 vim.keymap.set('n', 'pv', vim.cmd.Ex)
 vim.keymap.set('v', '<C-c>', '"+y')
 vim.keymap.set('v', '<C-x>', '"+x')
+vim.keymap.set('v', 'd', '"_d')
 vim.keymap.set('n', 'dd', '"_dd')
+vim.keymap.set('v','<Del>','"_x')
+vim.keymap.set('n','<Del>','"_x')
 vim.keymap.set('n', '<CR>', 'G<ESC>', { noremap = true })
-vim.api.nvim_set_keymap('n', 'vgg=G', '<ESC><cmd>lua vim.lsp.buf.format()<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', 'gg=G', ':LspZeroFormat<CR>', { noremap = true , silent=true })
+vim.api.nvim_set_keymap('v', '<C-f>', '<ESC><cmd>lua vim.lsp.buf.format()<CR>', {noremap = true})
 vim.keymap.set('n', '<C-b><Up>', '<C-w><Up>')
 vim.keymap.set('n', '<C-b><Down>', '<C-w><Down>')
 vim.keymap.set('n', '<C-b><Left>', '<C-w><Left>')
 vim.keymap.set('n', '<C-b><Right>', '<C-w><Right>')
 vim.keymap.set('n', '<C-b>h', vim.cmd.sp)
 vim.keymap.set('n', '<C-b>v', vim.cmd.vsp)
+---
