@@ -41,6 +41,7 @@ lsp.setup_nvim_cmp({
   })
 })
 
+
 require("flutter-tools").setup {
   decorations = {
     statusline = {
@@ -94,7 +95,7 @@ vim.keymap.set('n', '<C-b><Left>', '<C-w><Left>')
 vim.keymap.set('n', '<C-b><Right>', '<C-w><Right>')
 vim.keymap.set('n', '<C-b>h', vim.cmd.sp)
 vim.keymap.set('n', '<C-b>v', vim.cmd.vsp)
-vim.keymap.set('i', '<C-s>', '<ESC>1z=')
+vim.keymap.set('i', '<C-s>', '<ESC>1z=i')
 vim.api.nvim_set_keymap('n', '<C-S-Down>', ':m .+1<CR>==', { silent = true })
 vim.api.nvim_set_keymap('n', '<C-S-Up>', ':m .-2<CR>==', { silent = true })
 vim.api.nvim_set_keymap('v', '<C-S-Down>', ":m '>+1<CR>gv=gv", { silent = true })

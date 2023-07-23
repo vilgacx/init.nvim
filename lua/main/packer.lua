@@ -32,4 +32,5 @@ return require('packer').startup(function(use)
     }
   }
   use { "xorvet/vim-moonfly-contrast", as = "moonfly" }
+  use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
 end)
