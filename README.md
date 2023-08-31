@@ -6,3 +6,4 @@ Packeges used :
   - lualine.nvim           (Statusline)
   - vim-moonfly-contrast   (Theme)
 ```
+note: i use nvchad now.
